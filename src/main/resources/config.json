@@ -1,0 +1,137 @@
+{
+    "callsMade": {
+        "mean": 200,
+        "stdDev": 50
+    },
+    "incomingCalls": {
+        "mean": 250,
+        "stdDev": 5
+    },
+    "numAccounts": 200,
+    "startDate": "01/01/2014",
+    "endDate": "01/03/2014",
+    "callTypes": ["Free", "Local", "National", "Intl", "PRS", "Mobile"],
+    "dayDistribution": {
+        "sun": 0.2222,
+        "mon": 0.1111,
+        "tue": 0.1111,
+        "wed": 0.1111,
+        "thu": 0.1111,
+        "fri": 0.1111,
+        "sat": 0.2222
+    },
+    "offPeakTimePeriod": {
+        "start": "18:00",
+        "end": "08:00"
+    },
+    "outgoingCallParams": {
+        "Free": {
+            "callCost"     : 0,
+            "callDur"      : 5,
+            "callStdDev"   : 5,
+            "callStdDev2"  : 5,
+            "callOPCost"   : 0,
+            "callOPDur"    : 5,
+            "callOPStdDev" : 5,
+            "callOPStdDev2": 5,
+            "callProb"     : 0.00617
+        },
+        
+        "Local": {
+            "callCost"     : 4,
+            "callDur"      : 10,
+            "callStdDev"   : 5,
+            "callStdDev2"  : 5,
+            "callOPCost"   : 1,
+            "callOPDur"    : 20,
+            "callOPStdDev" : 10,
+            "callOPStdDev2": 10,
+            "callProb"     : 0.61728
+        },
+        
+        "National": {
+            "callCost"     : 8,
+            "callDur"      : 5,
+            "callStdDev"   : 3,
+            "callStdDev2"  : 5,
+            "callOPCost"   : 4,
+            "callOPDur"    : 10,
+            "callOPStdDev" : 10,
+            "callOPStdDev2": 5,
+            "callProb"     : 0.12346
+        },
+        
+        "Intl": {
+            "callCost"     : 30,
+            "callDur"      : 10,
+            "callStdDev"   : 10,
+            "callStdDev2"  : 5,
+            "callOPCost"   : 25,
+            "callOPDur"    : 15,
+            "callOPStdDev" : 10,
+            "callOPStdDev2": 5,
+            "callProb"     : 0.06173
+        },
+        
+        "PRS": {
+            "callCost"     : 50,
+            "callDur"      : 1,
+            "callStdDev"   : 3,
+            "callStdDev2"  : 2,
+            "callOPCost"   : 50,
+            "callOPDur"    : 1,
+            "callOPStdDev" : 3,
+            "callOPStdDev2": 2,
+            "callProb"     : 0.00617
+        },
+        
+        "Mobile": {
+            "callCost"     : 25,
+            "callDur"      : 3,
+            "callStdDev"   : 2,
+            "callStdDev2"  : 5,
+            "callOPCost"   : 15,
+            "callOPDur"    : 5,
+            "callOPStdDev" : 5,
+            "callOPStdDev2": 8,
+            "callProb"     : 0.18519
+        }
+    },
+            
+    "outgoingNumberDistribution": {
+        "Free": {
+            "mean": 70,
+            "stdDev": 5
+        },
+                
+        "Local": {
+            "mean": 10,
+            "stdDev": 5
+        },
+                
+        "National": {
+            "mean": 60,
+            "stdDev": 5
+        },
+                
+        "Intl": {
+            "mean": 70,
+            "stdDev": 5
+        },
+                
+        "PRS": {
+            "mean": 100,
+            "stdDev": 5
+        },
+                
+        "Mobile": {
+            "mean": 50,
+            "stdDev": 5
+        }
+    },
+            
+    "phoneLines": {
+        "mean": 1,
+        "stdDev": 0
+    }
+}
