@@ -2,10 +2,6 @@ package com.cdr.gen.util;
 
 import java.util.Random;
 
-/**
- *
- * @author maycon
- */
 public class RandomUtil {
     private static Random rand = new Random();
     /**

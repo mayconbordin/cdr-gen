@@ -7,8 +7,9 @@ import java.util.Map;
 import java.util.Random;
 
 /**
- *
- * @author maycon
+ * Used mainly for obtaining a random phone call type given the probabilities
+ * set in the configuration file.
+ * @author Maycon Viana Bordin <mayconbordin@gmail.com>
  */
 public class CallDistribution {
     private Map<String, Double> weigths;
@@ -38,6 +39,9 @@ public class CallDistribution {
         random = new Random(System.currentTimeMillis());
     }
     
+    /**
+     * @return A randomly selected phone call type
+     */
     public String getRandomCallType() {
         double tmpRnd = 1;
 

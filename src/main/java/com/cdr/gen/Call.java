@@ -3,8 +3,8 @@ package com.cdr.gen;
 import org.joda.time.Interval;
 
 /**
- *
- * @author maycon
+ * Holds information about a call.
+ * @author Maycon Viana Bordin <mayconbordin@gmail.com>
  */
 public class Call {
     private long id;

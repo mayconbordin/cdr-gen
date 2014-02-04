@@ -7,22 +7,21 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
-import java.util.Set;
 import org.apache.log4j.Logger;
 import org.joda.time.DateTime;
 import org.joda.time.Interval;
 import org.joda.time.format.DateTimeFormat;
-import org.joda.time.format.DateTimeFormatter;
 
 /**
- *
- * @author maycon
+ * This class creates the defined number of customers and a set of calls following
+ * the gaussian distribution.
+ * 
+ * @author Maycon Viana Bordin <mayconbordin@gmail.com>
  */
 public class Population {
     private static final Logger LOG = Logger.getLogger(Population.class);
     private int size;
     private Map<String, Long> callsMade;
-    private Map<String, Long> incCalls;
     private Map<String, Long> phoneLines;
     private List<String> callTypes;
     private Map<String, Object> outgoingCallParams;
@@ -38,7 +37,6 @@ public class Population {
     public Population(Map<String, Object> config) {
         this.size  = ((Long)config.get("numAccounts")).intValue();
         callsMade  = (Map<String, Long>) config.get("callsMade");
-        incCalls   = (Map<String, Long>) config.get("incomingCalls");
         phoneLines = (Map<String, Long>) config.get("phoneLines");
         callTypes  = (List<String>) config.get("callTypes");
         outgoingCallParams = (Map<String, Object>) config.get("outgoingCallParams");
@@ -52,6 +50,9 @@ public class Population {
         random = new Random(System.currentTimeMillis());
     }
     
+    /**
+     * Create the population
+     */
     public void create() {
         RandomGaussian gaussNum;
         
@@ -114,6 +115,12 @@ public class Population {
         }
     }
     
+    /**
+     * Generates random gaussian numbers until they become greater than one.
+     * @param stdDev The standard deviation
+     * @param mean The average
+     * @return A set of two random numbers
+     */
     protected RandomGaussian getRandomGaussian(long stdDev, long mean) {
         RandomGaussian gaussNum;
         
@@ -124,6 +131,12 @@ public class Population {
         return gaussNum;
     }
     
+    /**
+     * Calculates a random average for the call duration of a given type.
+     * @param callType The type of call for which the average will be calculated
+     * @param offPeak A boolean informing if the average is for off peak or not
+     * @return A set of two random numbers
+     */
     protected RandomGaussian getAvgCallDuration(String callType, boolean offPeak) {
         Map<String, Object> conf = (Map<String, Object>) outgoingCallParams.get(callType);
         
@@ -133,11 +146,20 @@ public class Population {
         return getRandomGaussian((Long)conf.get(stdDevKey), (Long)conf.get(meanKey));
     }
 
+    /**
+     * Generates a random phone number of 11 digits.
+     * @return The randomly generated phone number
+     */
     protected String getRandomPhoneNumber() {
         String code = PhoneNumberGenerator.getRandomPhoneCode("Local", "");
         return code + PhoneNumberGenerator.getRandomNumber(11 - code.length());
     }
     
+    /**
+     * Create all calls for a given person according to the number of calls calculated
+     * for the person.
+     * @param p The person for which the calls will be made
+     */
     protected void createCalls(Person p) {
         Map<String, List<Interval>> usedTimes = new HashMap<String, List<Interval>>();
 
@@ -197,6 +219,13 @@ public class Population {
         }
     }
     
+    /**
+     * Checks if a call time interval is already in use. This function is used to
+     * prevent to calls from the same person happening at the same time.
+     * @param usedTimes A collection which stores already consolidated time intervals
+     * @param time The time interval to be checked
+     * @return True if the time interval already exists or False otherwise
+     */
     protected boolean callIntervalOverlap(Map<String, List<Interval>> usedTimes, Interval time) {
         String date = time.getStart().toString(DateTimeFormat.forPattern("dd/MM/yyyy"));
         
@@ -214,6 +243,9 @@ public class Population {
         return false;
     }
 
+    /**
+     * @return The generated population
+     */
     public List<Person> getPopulation() {
         return population;
     }

@@ -3,10 +3,6 @@ package com.cdr.gen;
 import java.util.Map;
 import junit.framework.TestCase;
 
-/**
- *
- * @author maycon
- */
 public class CDRGenTest extends TestCase {
     
     public CDRGenTest(String testName) {

@@ -5,10 +5,6 @@ import java.util.List;
 import java.util.Map;
 import junit.framework.TestCase;
 
-/**
- *
- * @author maycon
- */
 public class PhoneNumberTest extends TestCase {
     
     public PhoneNumberTest(String testName) {

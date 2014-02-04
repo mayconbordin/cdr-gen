@@ -19,8 +19,8 @@ import org.supercsv.io.ICsvListReader;
 import org.supercsv.prefs.CsvPreference;
 
 /**
- *
- * @author maycon
+ * Generates phone numbers and codes.
+ * @author Maycon Viana Bordin <mayconbordin@gmail.com>
  */
 public class PhoneNumberGenerator {
     private static final Logger LOG = Logger.getLogger(PhoneNumberGenerator.class);
@@ -65,6 +65,11 @@ public class PhoneNumberGenerator {
         }
     }
     
+    /**
+     * Generates a random phone number.
+     * @param numDigits The number of digits
+     * @return The random phone number
+     */
     public static String getRandomNumber(int numDigits) {
         Random rnd = new Random(System.currentTimeMillis());
         

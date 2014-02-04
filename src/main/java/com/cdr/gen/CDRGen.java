@@ -17,6 +17,11 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+/**
+ * This class only loads the configuration file and handles the saving of the population
+ * to a file.
+ * @author Maycon Viana Bordin <mayconbordin@gmail.com>
+ */
 public final class CDRGen {
     private static final Logger LOG = Logger.getLogger(CDRGen.class);
     private static final String DEFAULT_CONFIG_FILE = "/config.json";

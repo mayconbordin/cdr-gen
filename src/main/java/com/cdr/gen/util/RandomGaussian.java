@@ -2,10 +2,6 @@ package com.cdr.gen.util;
 
 import java.util.Random;
 
-/**
- *
- * @author maycon
- */
 public class RandomGaussian {
     private double valueOne;
     private double valueTwo;

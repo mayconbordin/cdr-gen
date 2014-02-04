@@ -6,16 +6,11 @@ import java.util.List;
 import java.util.Map;
 
 /**
- *
- * @author maycon
+ * Stores information about a person.
+ * @author Maycon Viana Bordin <mayconbordin@gmail.com>
  */
 public class Person {
-    public static enum DataType {
-        TRAINING, TEST, VALIDATION
-    }
-    
     private String phoneNumber;
-    private DataType dataType;
     private int phoneLines;
     
     // summary info
@@ -33,14 +28,6 @@ public class Person {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
-    }
-
-    public DataType getDataType() {
-        return dataType;
-    }
-
-    public void setDataType(DataType dataType) {
-        this.dataType = dataType;
     }
 
     public int getPhoneLines() {

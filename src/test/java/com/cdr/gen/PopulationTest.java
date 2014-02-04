@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.cdr.gen;
 
 import java.io.FileWriter;
@@ -11,10 +7,6 @@ import junit.framework.TestCase;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 
-/**
- *
- * @author maycon
- */
 public class PopulationTest extends TestCase {
     private CDRGen generator;
     

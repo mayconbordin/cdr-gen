@@ -7,8 +7,8 @@ import java.util.List;
 import java.util.Map;
 
 /**
- *
- * @author maycon
+ * Generates a set of phone numbers for which a person can call.
+ * @author Maycon Viana Bordin <mayconbordin@gmail.com>
  */
 public class PhoneBucketGenerator {
     private Map<String, Object> outgoingNumberDist;
@@ -18,6 +18,12 @@ public class PhoneBucketGenerator {
         
     }
     
+    /**
+     * Create the set of random phone number based on the frequency of each call type.
+     * @param p The person for which the phone numbers will be generated.
+     * @param callTypeSummary The frequency of each call type
+     * @return The generated numbers, separated by type of call
+     */
     public Map<String, List<String>> createPhoneBucket(Person p, Map<String, Integer> callTypeSummary) {
         Map<String, Long> params;
         Map<String, List<String>> destPhoneNumbers = new HashMap<String, List<String>>(callTypeSummary.size());
