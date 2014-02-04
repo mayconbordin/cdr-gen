@@ -12,7 +12,7 @@ java -jar cdr-gen.jar <output_file> [<config_file>]
 
 The default configuration file is at `src/main/resources/config.json`, but a custom configuration can be given at `<config_file>`.
 
-# API Usage
+## API Usage
 
 ```java
 // load the default configuration file
