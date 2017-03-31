@@ -126,7 +126,7 @@ public class Population {
         
         do {
             gaussNum = RandomGaussian.generate(stdDev, mean);
-        } while (gaussNum.getValueOne() < 1 && gaussNum.getValueTwo() < 1);
+        } while (gaussNum.getValueOne() < 1 || gaussNum.getValueTwo() < 1);
         
         return gaussNum;
     }
